@@ -151,27 +151,27 @@ int main(int argc, char* argv[]) {
     // 二叉树部分
 /* 初始化二叉树 */
 // 初始化节点
-    TreeNode* n1 = new TreeNode(1);
-    TreeNode* n2 = new TreeNode(2);
-    TreeNode* n3 = new TreeNode(3);
-    TreeNode* n4 = new TreeNode(4);
-    TreeNode* n5 = new TreeNode(5);
-// 构建节点之间的引用（指针）
-    n1->left = n2;
-    n1->right = n3;
-    n2->left = n4;
-    n2->right = n5;
-
-    Solution s;
-    vector<vector<int>>ans;
-    vector<int> vec;
-    ans = s.levelOrder(n1);
-    for(auto row:ans){
-        for(auto j :row){
-            cout<<j<<" ";
-        }
-        cout<<endl;
-    }
+//    TreeNode* n1 = new TreeNode(1);
+//    TreeNode* n2 = new TreeNode(2);
+//    TreeNode* n3 = new TreeNode(3);
+//    TreeNode* n4 = new TreeNode(4);
+//    TreeNode* n5 = new TreeNode(5);
+//// 构建节点之间的引用（指针）
+//    n1->left = n2;
+//    n1->right = n3;
+//    n2->left = n4;
+//    n2->right = n5;
+//
+//    Solution s;
+//    vector<vector<int>>ans;
+//    vector<int> vec;
+//    ans = s.levelOrder(n1);
+//    for(auto row:ans){
+//        for(auto j :row){
+//            cout<<j<<" ";
+//        }
+//        cout<<endl;
+//    }
 
 //    cout<<s.diameterOfBinaryTree(n1)<<endl;
 //
@@ -179,30 +179,37 @@ int main(int argc, char* argv[]) {
 //    for(auto x: vec){
 //        cout<<x<<" ";
 //    }
-    vector<double> vec1;
-    vec1 = s.averageOfLevels(n1);
-    for(auto x: vec1){
-        cout<<x<<" ";
-    }
+//    vector<double> vec1;
+//    vec1 = s.averageOfLevels(n1);
+//    for(auto x: vec1){
+//        cout<<x<<" ";
+//    }
+//
+//    cout<<endl<<endl;
+//    unordered_set<int> test;
+//    test.insert(4);
+//    test.insert(3);
+//    test.insert(4);
+//    if(test.count(4)){
+//        cout<<test.count(4)<<endl;
+//    }
 
-    cout<<endl<<endl;
-    unordered_set<int> test;
-    test.insert(4);
-    test.insert(3);
-    test.insert(4);
-    if(test.count(4)){
-        cout<<test.count(4)<<endl;
-    }
 
 
-
-    multiset<int> se;
-    se.insert(1);
-    se.insert(2);
-    se.insert(1);
-    se.insert(4);
-
-    cout<<se.count(1)<<endl;
-
+//    multiset<int> se;
+//    se.insert(1);
+//    se.insert(2);
+//    se.insert(1);
+//    se.insert(4);
+//
+//    cout<<se.count(1)<<endl;
+    Solution s;
+    vector<vector<char>> grid = {
+            {'1','1','1','1','0'},
+            {'1','1','0','1','0'},
+            {'1','1','0','0','0'},
+            {'0','0','0','0','0'}
+    };
+    cout<<s.numIslands(grid)<<endl;
     return 0;
 }

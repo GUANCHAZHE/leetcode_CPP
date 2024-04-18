@@ -591,6 +591,45 @@ public:
     }
 
 
+    // 图
+    int numIslands(vector<vector<char>>& grid) {
+        if (grid.empty()) {
+            return 0;
+        }
+        int numIsland = 0;
+        int m = grid.size();
+        int n = grid[0].size();
+        vector<vector<int>> dirs = {{-1, 0},
+                                      {1,  0},
+                                      {0,  -1},
+                                      {0,  1}};
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    numIsland++;
+                    grid[i][j] = '0';
+                }
+                queue<pair<int, int>> que;
+                que.push({i, j});
+                while(! que.empty()){
+                    // 这个写法牛逼啊，没见过，直接获取一个pair里面对应的两个数值
+                    auto [x,y] = que.front();
+                    que.pop();
+
+                    for(auto dir : dirs){
+                        int nx = x + dir[0];
+                        int ny = y + dir[1];
+                        if(nx>=0 && nx <m && ny >= 0 && ny< n && grid[nx][ny] =='1'){
+                            que.push({nx,ny});
+                            grid[nx][ny] = '0';
+                        }
+                    }
+                }
+
+            }
+            return numIsland;
+        }
+    }
 
 
 
