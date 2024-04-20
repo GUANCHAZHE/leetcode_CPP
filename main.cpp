@@ -210,6 +210,6 @@ int main(int argc, char* argv[]) {
             {'1','1','0','0','0'},
             {'0','0','0','0','0'}
     };
-    cout<<s.numIslands(grid)<<endl;
+    cout<<s.numIslands1(grid)<<endl;
     return 0;
 }

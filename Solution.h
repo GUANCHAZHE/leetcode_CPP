@@ -632,7 +632,34 @@ public:
     }
 
 
-
+    int numIslands1(vector<vector<char>>& grid) {
+        int res = 0;
+        for(int r = 0; r<grid.size();r++){
+            for(int c = 0; c<grid[0].size();c++){
+                if(grid[r][c] =='1'){
+                    dfs(grid,r,c);
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
+    void dfs(vector<vector<char>>& grid,int r, int c){
+        if(!inArea(grid,r,c)){
+            return ;
+        }
+        if(grid[r][c] != '1'){
+            return;
+        }
+        grid[r][c] ='2';
+        dfs(grid,r-1,c);
+        dfs(grid, r+1,c);
+        dfs(grid,r,c-1);
+        dfs(grid,r,c+1);
+    }
+    bool inArea(vector<vector<char>>& grid,int r, int c){
+        return 0<= r && r < grid.size() && 0<=c && c < grid[0].size();
+    }
 
 };
 
