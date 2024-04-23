@@ -151,16 +151,16 @@ int main(int argc, char* argv[]) {
     // 二叉树部分
 /* 初始化二叉树 */
 // 初始化节点
-//    TreeNode* n1 = new TreeNode(1);
-//    TreeNode* n2 = new TreeNode(2);
-//    TreeNode* n3 = new TreeNode(3);
-//    TreeNode* n4 = new TreeNode(4);
-//    TreeNode* n5 = new TreeNode(5);
-//// 构建节点之间的引用（指针）
-//    n1->left = n2;
-//    n1->right = n3;
-//    n2->left = n4;
-//    n2->right = n5;
+    TreeNode* n1 = new TreeNode(1);
+    TreeNode* n2 = new TreeNode(2);
+    TreeNode* n3 = new TreeNode(3);
+    TreeNode* n4 = new TreeNode(4);
+    TreeNode* n5 = new TreeNode(5);
+// 构建节点之间的引用（指针）
+    n1->left = n2;
+    n1->right = n3;
+    n2->left = n4;
+    n2->right = n5;
 //
 //    Solution s;
 //    vector<vector<int>>ans;
@@ -203,13 +203,32 @@ int main(int argc, char* argv[]) {
 //    se.insert(4);
 //
 //    cout<<se.count(1)<<endl;
+//    Solution s;
+//    vector<vector<char>> grid = {
+//            {'1','1','1','1','0'},
+//            {'1','1','0','1','0'},
+//            {'1','1','0','0','0'},
+//            {'0','0','0','0','0'}
+//    };
+//    cout<<s.numIslands1(grid)<<endl;
+//
+//    int a=3;
+//    vector<string> test;
+//    test.push_back(to_string(a));
+//    cout<<test.front()<<endl;
+
     Solution s;
-    vector<vector<char>> grid = {
-            {'1','1','1','1','0'},
-            {'1','1','0','1','0'},
-            {'1','1','0','0','0'},
-            {'0','0','0','0','0'}
-    };
-    cout<<s.numIslands1(grid)<<endl;
+    vector<vector<int>> ans;
+    vector<int> path;
+    s.dfs(n1,path,ans);
+    printVectorMatrix(ans);
+
+//    Solution s;
+//    vector<string> ans;
+//    ans = s.binaryTreePaths(n1);
+//    for(auto s: ans){
+//        cout<< s<<endl;
+//    }
+
     return 0;
 }

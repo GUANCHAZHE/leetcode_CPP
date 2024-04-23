@@ -661,6 +661,36 @@ public:
         return 0<= r && r < grid.size() && 0<=c && c < grid[0].size();
     }
 
+    void dfs(TreeNode* root, vector<int> path, vector<vector<int>>& ans){
+        if(root == nullptr){
+            return;
+        }
+        path.push_back(root->val);
+        if(! root->left && !root->right){
+            ans.push_back(path);
+        }
+        dfs(root->left,path,ans);
+        dfs(root->right,path,ans);
+    }
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string> paths;
+        dfs(root,"",paths);
+        return paths;
+    }
+    void dfs(TreeNode* root, string path, vector<string>& paths){
+        if( root == nullptr){
+            return ;
+        }
+        path += to_string(root->val);
+        if(!root->left && !root->right){
+            paths.push_back(path);
+        }
+        path +="->";
+        dfs(root->left,path, paths);
+        dfs(root->right,path,paths);
+    }
+
+
 };
 
 
