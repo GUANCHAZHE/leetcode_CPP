@@ -690,6 +690,30 @@ public:
         dfs(root->right,path,paths);
     }
 
+    vector<vector<int>> res1;
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<int> path;
+        vector<bool> used(nums.size(),false);
+        backtrack(nums,path,used);
+        return res1;
+    }
+    void backtrack(vector<int>& nums, vector<int>& path, vector<bool>& used){
+        if( path.size() == nums.size()){
+            res1.push_back(path);
+            return;
+        }
+        for(int i = 0; i < nums.size();i++){
+            if(used[i] == true){
+                continue;
+            }
+            path.push_back(nums[i]);
+            used[i]=true;
+            backtrack(nums,path,used);
+            path.pop_back();
+            used[i]=false;
+        }
+    }
+
 
 };
 

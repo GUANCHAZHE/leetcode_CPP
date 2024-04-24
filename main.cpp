@@ -217,18 +217,23 @@ int main(int argc, char* argv[]) {
 //    test.push_back(to_string(a));
 //    cout<<test.front()<<endl;
 
-    Solution s;
-    vector<vector<int>> ans;
-    vector<int> path;
-    s.dfs(n1,path,ans);
-    printVectorMatrix(ans);
-
 //    Solution s;
-//    vector<string> ans;
-//    ans = s.binaryTreePaths(n1);
-//    for(auto s: ans){
-//        cout<< s<<endl;
-//    }
+//    vector<vector<int>> ans;
+//    vector<int> path;
+//    s.dfs(n1,path,ans);
+//    printVectorMatrix(ans);
+
+    Solution s;
+    vector<string> ans;
+    ans = s.binaryTreePaths(n1);
+    for(auto s: ans){
+        cout<< s<<endl;
+    }
+//    string a = "";
+//    a+="1";
+//    vector<string> qwe;
+//    qwe.push_back(a);
+//    cout<<qwe.front()<<endl;
 
     return 0;
 }
