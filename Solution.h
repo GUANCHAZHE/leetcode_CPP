@@ -714,6 +714,33 @@ public:
         }
     }
 
+    //leetcode 78
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> res(1);
+        vector<int> state;
+        vector<bool> used(nums.size(),false);
+        int start = 0;
+        sort(nums.begin(),nums.end());
+        backtrack(state,nums,start, res,used);
+        return res;
+    }
+
+    void backtrack(vector<int>& state, vector<int>& choices, int start, vector<vector<int>>& res, vector<bool>& used){
+        if( state.size() == choices.size()){
+            return;
+        }
+        for (int i = start; i < choices.size(); i++){
+            if(used[i] == true){
+                continue;
+            }
+            state.push_back(choices[i]);
+            used[i] = true;
+            res.push_back(state);
+            backtrack(state, choices, i, res,used);
+            state.pop_back();
+            used[i] = false;
+        }
+    }
 
 };
 
