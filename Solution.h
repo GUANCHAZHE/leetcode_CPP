@@ -733,6 +733,53 @@ public:
             state.pop_back();
         }
     }
+    vector<string> res93;
+    int pointnum = 0;
+    vector<string> restoreIpAddresses(string s) {
+        if(s.size()<4 || s.size()>12){
+            return {};
+        }
+        backtrack(s,0);
+        return res93;
+
+    }
+    void backtrack( string& s,int start){
+        if(pointnum == 3){
+            if( isValid(s,start,s.size()-1))
+                res93.emplace_back(s);
+            return;
+        }
+        for(int i = start; i < s.size();i++){
+            if(isValid(s,start,i)){
+                s.insert(s.begin()+i+1,'.');
+                pointnum++;
+                backtrack(s,i+2);
+                s.erase(s.begin()+i+1);
+                pointnum--;
+            } else break;
+        }
+    }
+    bool isValid(string&s, int start, int end){
+        if(start > end){
+            return false;
+        }
+        // 0开头的数字不合法，但是直接选取0就可以
+        if(s[start] == '0' && start != end){
+            return false;
+        }
+        int num = 0;
+        for(int i = start; i <= end ; i++){
+            if(s[i] >'9' || s[i] < '0'){
+                return false;
+            }
+            num = num*10 + (s[i]-'0');
+            //这一步太牛逼了，字符型到int的转换，这样效率是高
+            if(num > 255){
+                return false;
+            }
+        }
+        return true;
+    }
 
 };
 
