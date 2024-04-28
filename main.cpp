@@ -239,5 +239,8 @@ int main(int argc, char* argv[]) {
     Solution s;
     vector<vector<int>> res = s.subsets(nums);
     printVectorMatrix(res);
+    cout<<res.size()<<endl;
+    string str={"qwert"};
+    cout<<str[1]<<endl;
     return 0;
 }
