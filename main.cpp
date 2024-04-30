@@ -235,16 +235,28 @@ int main(int argc, char* argv[]) {
 //    qwe.push_back(a);
 //    cout<<qwe.front()<<endl;
 
-    vector<int> nums = {1,2,3};
-    Solution s;
-    vector<vector<int>> res = s.subsets(nums);
-    printVectorMatrix(res);
-    cout<<res.size()<<endl;
-    string str={"123"};
-    cout<<(int)str[1]<<endl;
-    string str93{"25525511135"};
-    vector<string> ans93;
-    ans93 = s.restoreIpAddresses(str93);
-    cout<<"finish"<<endl;
+//    vector<int> nums = {1,2,3};
+//    Solution s;
+//    vector<vector<int>> res = s.subsets(nums);
+//    printVectorMatrix(res);
+//    cout<<res.size()<<endl;
+//    string str={"123"};
+//    cout<<(int)str[1]<<endl;
+//    string str93{"25525511135"};
+//    vector<string> ans93;
+//    ans93 = s.restoreIpAddresses(str93);
+//    cout<<"finish"<<endl;
+//
+
+//    string in{"the sky is blue"};
+//    Solution s;
+//    string ans = s.reverseWords(in);
+//    cout<< ans<<endl;
+
+    string test{"1234"};
+    for(int i = 0; i < test.size() ; i++){
+        cout<<test[i]<<endl;
+    }
+
     return 0;
 }
