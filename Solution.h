@@ -780,22 +780,37 @@ public:
         }
         return true;
     }
-//    string reverseWords(string s) {
-//    }
-//    void removespace(string& s){
-//        if(s.size() > 0 && s[s.size()-1]==' '){
-//            s.erase(s.begin() + s.size() - 1);
-//        }
-//        for(int i = s.size()-1; i > 0; i--){
-//            if(s[i] == s[i-1] && s[i]==' '){
-//                s.erase(s.begin() + i);
-//            }
-//        }
-//        if(s.size() > 0 && s[0] ==' '){
-//            s.erase(s.begin());
-//        }
-//
-//    }
+    string reverseWords(string s) {
+        removespace(s);
+        reverse(s.begin(),s.end());
+        int start = 0;
+        for(int i = 0; i <= s.size(); i++){
+            if( i == s.size() || s[i] ==' '){
+                revers_num(s,start,i - 1);
+                start = i + 1;
+            }
+        }
+        return s;
+    }
+    void removespace(string& s){
+        for(int i = s.size()-1; i > 0; i--){
+            if(s[i] == s[i-1] && s[i]==' '){
+                s.erase(s.begin() + i);
+            }
+        }
+        if(s.size() > 0 && s[s.size()-1]==' '){
+            s.erase(s.begin() + s.size() - 1);
+        }
+        if(s.size() > 0 && s[0] ==' '){
+            s.erase(s.begin());
+        }
+    }
+    void revers_num(string& s,int start, int end){
+        for(int i = start, j = end;i < j; i++, j--){
+            swap(s[i],s[j]);
+        }
+    }
+
 };
 
 

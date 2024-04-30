@@ -248,15 +248,16 @@ int main(int argc, char* argv[]) {
 //    cout<<"finish"<<endl;
 //
 
-//    string in{"the sky is blue"};
+    string in{"the sky is blue"};
+    cout<< in<<endl;
+    Solution s;
+    string ans = s.reverseWords(in);
+    cout<<ans<<endl;
+//    string test{"    1   2   3   4   "};
+//    cout<<test<<endl;
 //    Solution s;
-//    string ans = s.reverseWords(in);
-//    cout<< ans<<endl;
-
-    string test{"1234"};
-    for(int i = 0; i < test.size() ; i++){
-        cout<<test[i]<<endl;
-    }
+//    s.reverseWords(test);
+//    cout<<test<<endl;
 
     return 0;
 }
