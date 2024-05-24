@@ -14,6 +14,7 @@
 #include <string>
 #include <stack>
 #include <queue>
+#include <iostream>
 
 using namespace std;
 
@@ -811,6 +812,40 @@ public:
         }
     }
 
+    int change(int amount, vector<int>& coins) {
+        vector<int> dp(amount+1,0);
+        dp[0] = 1;
+        for(int j = 0; j <= amount; j++){
+            for(int coin : coins){
+                if(j >= coin){
+                    dp[j] += dp[j - coin];
+                    cout<<dp[j]<<endl;
+                }
+            }
+        }
+        return dp[amount];
+
+    }
+
+    int findLength(vector<int>& nums1, vector<int>& nums2) {
+        int count = 0;
+        for (int i = 0; i < nums1.size(); i++) {
+            auto find_pos = find(nums2.begin(), nums2.end(), nums1[i]);
+            if (find_pos != nums2.end()) {
+                int index2 = find_pos - nums2.begin();
+                for (int j = index2 + 1, k = i + 1; j < nums2.size();) {
+                    if (nums2[j] == nums1[k]) {
+                        j++;
+                        k++;
+                        count++;
+                    } else {
+                        count = 0;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 };
 
 

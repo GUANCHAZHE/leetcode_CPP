@@ -248,16 +248,28 @@ int main(int argc, char* argv[]) {
 //    cout<<"finish"<<endl;
 //
 
-    string in{"the sky is blue"};
-    cout<< in<<endl;
-    Solution s;
-    string ans = s.reverseWords(in);
-    cout<<ans<<endl;
-//    string test{"    1   2   3   4   "};
-//    cout<<test<<endl;
+//    string in{"the sky is blue"};
+//    cout<< in<<endl;
 //    Solution s;
-//    s.reverseWords(test);
-//    cout<<test<<endl;
+//    string ans = s.reverseWords(in);
+//    cout<<ans<<endl;
+////    string test{"    1   2   3   4   "};
+////    cout<<test<<endl;
+////    Solution s;
+////    s.reverseWords(test);
+////    cout<<test<<endl;
+//    vector<int> rt{1,2,5};
+//    cout<<s.change(5,rt);
+//    string str = "abcdefg";
+//    string subStr = str.substr(1, 3);
+//    cout << "subStr = " << subStr << endl;
+//
+
+    vector<int> nums1{1,2,3,2,1};
+    vector<int> nums2{3,2,1,4,7};
+    Solution s;
+    int a = s.findLength(nums1,nums2);
+    cout<<a<<endl;
 
     return 0;
 }
