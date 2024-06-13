@@ -846,6 +846,30 @@ public:
             }
         }
     }
+
+    int minSubArrayLen(int target, vector<int>& nums) {
+        for(int index = 0; index < nums.size(); index++){
+            int left = 0;
+            int right = left + index;
+            for(;right < nums.size(); left++, right++){
+                int s = sum(nums,left,right);
+                if( s > target){
+                    return right - left;
+                }
+            }
+        }
+        return 0;
+    }
+    int sum(vector<int>& nums, int start, int end){
+        int ans = 0;
+        while(start <= end){
+            ans += nums[start];
+            start++;
+        }
+        return ans;
+    }
+
+
 };
 
 

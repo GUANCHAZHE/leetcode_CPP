@@ -265,11 +265,14 @@ int main(int argc, char* argv[]) {
 //    cout << "subStr = " << subStr << endl;
 //
 
-    vector<int> nums1{1,2,3,2,1};
-    vector<int> nums2{3,2,1,4,7};
-    Solution s;
-    int a = s.findLength(nums1,nums2);
-    cout<<a<<endl;
+//    vector<int> nums1{1,2,3,2,1};
+//    vector<int> nums2{3,2,1,4,7};
+//    Solution s;
+//    int a = s.findLength(nums1,nums2);
+//    cout<<a<<endl;
 
+    vector<int>  nums = {2,3,1,2,4,3};
+    Solution s;
+    s.minSubArrayLen(7,nums);
     return 0;
 }
